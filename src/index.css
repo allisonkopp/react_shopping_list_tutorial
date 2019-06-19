@@ -9,3 +9,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+h1 {
+  text-align: center;
+}
+
+.item-container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.item-container button {
+  margin: 1rem;
+}
+
+.list-wrapper h1 {
+  background-color: rgba(188, 188, 188, 0.5);
+}

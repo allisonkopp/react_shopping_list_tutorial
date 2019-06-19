@@ -2,9 +2,9 @@ import React from 'react';
 import { ListItem } from '.';
 
 const Cart = ({ shoppingCart, updateItemStatus, removeItem }) => (
-  <div>
+  <div className="col-md list-wrapper">
     <h1>Shopping Cart</h1>
-    <ul>
+    <ul className="list-group">
       {shoppingCart.map(item => (
         <ListItem
           key={item.id}

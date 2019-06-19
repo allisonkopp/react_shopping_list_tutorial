@@ -2,9 +2,9 @@ import React from 'react';
 import { ListItem } from '.';
 
 const Wishlist = ({ wishList = [], updateItemStatus, removeItem }) => (
-  <div>
+  <div className="col-md list-wrapper">
     <h1>Wishlist</h1>
-    <ul>
+    <ul className="list-group">
       {wishList.map(item => (
         <ListItem
           key={item.id}

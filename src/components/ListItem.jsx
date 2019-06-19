@@ -1,13 +1,21 @@
 import React from 'react';
 
 const ListItem = ({ name, description, toggleList, itemLocation, removeItem }) => (
-  <li>
-    <h2>
-      <button onClick={removeItem}>✖</button>
-      {name}
-    </h2>
-    <p>{description}</p>
-    <button onClick={toggleList}>Add to {itemLocation}</button>
+  <li className="list-group-item">
+    <div className="item-container">
+      <div>
+        <h3>{name}</h3>
+        <p>{description}</p>
+      </div>
+      <div>
+        <button className="btn btn-danger" onClick={removeItem}>
+          ✖
+        </button>
+        <button className="btn btn-primary" onClick={toggleList}>
+          Add to {itemLocation}
+        </button>
+      </div>
+    </div>
   </li>
 );
 

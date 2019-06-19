@@ -27,27 +27,34 @@ class Form extends Component {
   render() {
     const { name, description, isDuplicate } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label>Name: </label>
-          <input
-            type="text"
-            onChange={this.handleInputChange('name')}
-            onBlur={this.checkForDuplicates(name)}
-            value={name}
-          />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <label>Name: </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  onChange={this.handleInputChange('name')}
+                  onBlur={this.checkForDuplicates(name)}
+                  value={name}
+                />
+              </div>
+              <div className="form-group">
+                <label>Description: </label>
+                <textarea
+                  className="form-control"
+                  type="text"
+                  onChange={this.handleInputChange('description')}
+                  value={description}
+                />
+              </div>
+              <input className="btn btn-primary" type="submit" value="Add Item" disabled={isDuplicate} />
+            </form>
+          </div>
         </div>
-        <div>
-          <label>Description: </label>
-          <textarea
-            id="description-input"
-            type="text"
-            onChange={this.handleInputChange('description')}
-            value={description}
-          />
-        </div>
-        <input id="submit-btn" type="submit" value="Add Item" disabled={isDuplicate} />
-      </form>
+      </div>
     );
   }
 }

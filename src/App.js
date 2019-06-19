@@ -28,11 +28,17 @@ class App extends Component {
     const shoppingCart = list.filter(item => item.inCart);
     const wishList = list.filter(item => !item.inCart);
     return (
-      <div>
-        <h1>My Shopping List</h1>
-        <Form addNewItem={this.addNewItem} list={list} />
-        <Wishlist wishList={wishList} updateItemStatus={this.updateItemStatus} removeItem={this.removeItem} />
-        <Cart shoppingCart={shoppingCart} updateItemStatus={this.updateItemStatus} removeItem={this.removeItem} />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h1>My Shopping List</h1>
+            <Form addNewItem={this.addNewItem} list={list} />
+          </div>
+        </div>
+        <div className="row">
+          <Wishlist wishList={wishList} updateItemStatus={this.updateItemStatus} removeItem={this.removeItem} />
+          <Cart shoppingCart={shoppingCart} updateItemStatus={this.updateItemStatus} removeItem={this.removeItem} />
+        </div>
       </div>
     );
   }
